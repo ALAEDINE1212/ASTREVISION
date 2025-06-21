@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ASTRE Admin</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+  <script defer src="script.js"></script>
+</head>
+<body class="admin-body">
+  <nav class="nav-bar admin-nav">
+    <div class="nav-logo">ASTRE Admin</div>
+    <div class="nav-links">
+      <a href="index.html" class="btn">Home</a>
+      <a href="collections.html" class="btn">Collections</a>
+    </div>
+  </nav>
+
+  <!-- LOGIN FORM -->
+  <div id="loginWrapper" class="admin-login-container">
+    <div class="login-card">
+      <h2>Admin Login</h2>
+      <form id="loginForm" autocomplete="off">
+        <div class="form-group">
+          <input type="email" id="loginEmail" placeholder=" " required />
+          <label for="loginEmail">Email Address</label>
+        </div>
+        <div class="form-group">
+          <input type="password" id="loginPassword" placeholder=" " required />
+          <label for="loginPassword">Password</label>
+        </div>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- DASHBOARD (hidden until login succeeds) -->
+  <main id="dashboardSection" class="hidden admin-dashboard">
+    <button id="logoutBtn" class="btn logout-btn">Logout</button>
+
+    <!-- ADD PRODUCT -->
+    <section class="admin-section">
+      <h3>Add New Product</h3>
+      <form id="addProductForm">
+        <div class="form-group">
+          <input type="text" id="prodName" placeholder=" " required />
+          <label for="prodName">Name</label>
+        </div>
+        <div class="form-group">
+          <textarea id="prodDesc" rows="2" placeholder=" " required></textarea>
+          <label for="prodDesc">Description</label>
+        </div>
+        <div class="form-group">
+          <input type="number" step="0.01" id="prodPrice" placeholder=" " required />
+          <label for="prodPrice">Price (USD)</label>
+        </div>
+        <div class="form-group">
+          <input type="url" id="prodImage" placeholder=" " required />
+          <label for="prodImage">Image URL</label>
+        </div>
+        <button type="submit" class="btn">Add Product</button>
+      </form>
+    </section>
+
+    <!-- EXISTING PRODUCTS -->
+    <section class="admin-section">
+      <h3>Existing Products</h3>
+      <div id="existingProductsList" class="product-list-admin">
+        <!-- JS injects existing products here -->
+      </div>
+    </section>
+
+    <!-- ORDERS -->
+    <section class="admin-section">
+      <h3>Orders</h3>
+      <table id="ordersTable">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Product Name</th>
+            <th>Customer Email</th>
+            <th>Timestamp</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- JS injects order rows here -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

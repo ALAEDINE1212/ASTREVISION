@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ASTRE Clothing</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- GSAP for the lightning animation -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+  <!-- Single JS file that handles both public + admin logic -->
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- INTRO (STARFIELD + “AS” LIGHTNING) -->
+  <div id="introContainer">
+    <canvas id="starfield"></canvas>
+    <div id="flashScreen"></div>
+    <div id="logoWrapper">
+      <svg
+        id="asLogo"
+        viewBox="0 0 600 200"
+        preserveAspectRatio="xMidYMid meet"
+      >
+        <text
+          id="logoText"
+          x="50%"
+          y="50%"
+          text-anchor="middle"
+          dominant-baseline="middle"
+          font-family="Helvetica Neue, Arial, sans-serif"
+          font-size="150px"
+          fill="none"
+          stroke="#0ff"
+          stroke-width="4"
+          stroke-linejoin="round"
+          stroke-dasharray="1000"
+          stroke-dashoffset="1000"
+        >
+          AS
+        </text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- HERO (Visible after intro) -->
+  <div id="heroSection" class="hidden">
+    <nav class="nav-bar">
+      <div class="nav-logo">ASTRE</div>
+      <div class="nav-links">
+        <a href="collections.html" class="btn">Explore Collection</a>
+        <a href="admin.html" class="btn">Admin</a>
+      </div>
+    </nav>
+    <div class="hero-content">
+      <h1 class="hero-title">ASTRE</h1>
+      <p class="hero-subtitle">
+        Where celestial elegance meets earthly sophistication
+      </p>
+    </div>
+    <footer class="site-footer">
+      © 2025 ASTRE Clothing. All rights reserved.
+    </footer>
+  </div>
+</body>
+</html>
